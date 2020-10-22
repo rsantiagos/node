@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Labeled Input</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <labeledinput id="username" label="Usuario:"> </labeledinput>
+  </div>
+  <script>
+    Vue.component('labeledinput', {
+        // inheritAttrs: false,
+        props: ['id', 'label'],
+        template: `<template> 
+                <div>
+                    <label :for="id"> {{ label }} </label>
+                    <input type="text" :id="id">
+                </div
+            </template>`
+    })
+    
+    var vm = new Vue({
+      el: '#app'
+    });
+    
+    // Caso de ejemplo
+    console.log(document.getElementById("app").innerHTML);
+  </script>
+</body>
+</html>
